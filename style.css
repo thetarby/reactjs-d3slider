@@ -1,11 +1,11 @@
 #d3slider svg line.track {
 stroke-opacity: 0.4;
 stroke: #000;
-stroke-width: 10px;
+stroke-width: 5px;
 }
 #d3slider svg line.track-inset {
-stroke: steelblue;
-stroke-width: 8px;
+stroke: grey;
+stroke-width: 5px;
 }
 #d3slider svg line.track-overlay {
 stroke: #ccc;
@@ -14,7 +14,7 @@ stroke-opacity: 0;
 cursor:pointer;
 }
 #d3slider svg .handle {
-fill: red;
+fill: lightgreen;
 stroke: #000;
 }
 #d3slider svg line.track-overlay, #d3slider svg line.track, #d3slider svg line.track-inset {

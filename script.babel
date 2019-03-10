@@ -16,7 +16,6 @@ class Slider extends React.Component {
   updateDOMSlider(value){
           console.log("updateDOM")
             var cx = this.xScale(value);
-            var xVal = value;
             this.handle.attr('cx', cx);
             this.handleText.attr("x",cx).text(this.props.d3slider.value);    
   }
@@ -259,8 +258,8 @@ svg.call(d3.drag()
 
   }
   componentDidUpdate(){
-      this.updateDOMSlider(this.props.d3slider.value)
       this.handleResize(+(d3.select('#d3slider').style("width")).slice(0,-2))
+      this.updateDOMSlider(this.props.d3slider.value)
   }
 
   render() {
