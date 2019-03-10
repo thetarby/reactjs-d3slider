@@ -18,7 +18,6 @@ class Slider extends React.Component {
             var cx = this.xScale(value);
             var xVal = value;
             this.handle.attr('cx', cx);
-    console.log(this.handleText.text())
             this.handleText.attr("x",cx).text(this.props.d3slider.value);    
   }
   handleResize(x){
@@ -123,8 +122,6 @@ class Slider extends React.Component {
                 value:xVal
               }
             )
-            console.log( rangeValues )
-            
         }
   handleReset(){
     this.setState({
@@ -293,14 +290,14 @@ class App extends React.Component {
     this.handleChange=this.handleChange.bind(this);
   }
   handleClick(){
-    this.setState({
-      slider:{value:(this.state.slider.value)=(this.state.slider.value)+1, 
-              range:this.state.slider.range
-             }
-    })
+    var state={...this.state}
+    state.slider.value++
+    this.setState(state)
   }
-  handleChange(slider){
-    this.setState({slider:slider})
+  handleChange(d3slider){
+    var state={...this.state}
+    state.slider.value=d3slider.value
+    this.setState(state)
   }
   render() {
     return (
